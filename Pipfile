@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 spotipy = "*"
 boto3 = "*"
+flask = "*"
 python-dotenv = "*"
 
 [dev-packages]
