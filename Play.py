@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set the variables from the .env file.
-Client_ID = os.getenv('Client_ID')
-Client_Secret = os.getenv('Client_Secret')
+Client_ID = os.getenv('CLIENT_ID')
+Client_Secret = os.getenv('CLIENT_Secret')
 
 # Authenticate on spotify developer (App)
 client_credentials_manager = SpotifyClientCredentials(client_id=Client_ID, client_secret=Client_Secret)
