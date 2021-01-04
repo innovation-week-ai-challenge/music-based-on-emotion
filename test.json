@@ -1,0 +1,107 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?query=Lose%2520Yourself&type=track&offset=1&limit=1",
+    "items": [
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5mLiKrBW9tBrgftQks8RN0"
+              },
+              "href": "https://api.spotify.com/v1/artists/5mLiKrBW9tBrgftQks8RN0",
+              "id": "5mLiKrBW9tBrgftQks8RN0",
+              "name": "Henry Olonga",
+              "type": "artist",
+              "uri": "spotify:artist:5mLiKrBW9tBrgftQks8RN0"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5hnL5jeXvusnuBDF39czv0"
+              },
+              "href": "https://api.spotify.com/v1/artists/5hnL5jeXvusnuBDF39czv0",
+              "id": "5hnL5jeXvusnuBDF39czv0",
+              "name": "Denzel",
+              "type": "artist",
+              "uri": "spotify:artist:5hnL5jeXvusnuBDF39czv0"
+            }
+          ],
+          "available_markets": [],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6QJHCV3EQ7CDMiLP1SomkR"
+          },
+          "href": "https://api.spotify.com/v1/albums/6QJHCV3EQ7CDMiLP1SomkR",
+          "id": "6QJHCV3EQ7CDMiLP1SomkR",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27307dacb9216ab8cf26cbecd2b",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0207dacb9216ab8cf26cbecd2b",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485107dacb9216ab8cf26cbecd2b",
+              "width": 64
+            }
+          ],
+          "name": "Skyfall/Lose Yourself (The Voice Australia 2019 Performance / Live)",
+          "release_date": "2019-06-17",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6QJHCV3EQ7CDMiLP1SomkR"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5mLiKrBW9tBrgftQks8RN0"
+            },
+            "href": "https://api.spotify.com/v1/artists/5mLiKrBW9tBrgftQks8RN0",
+            "id": "5mLiKrBW9tBrgftQks8RN0",
+            "name": "Henry Olonga",
+            "type": "artist",
+            "uri": "spotify:artist:5mLiKrBW9tBrgftQks8RN0"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5hnL5jeXvusnuBDF39czv0"
+            },
+            "href": "https://api.spotify.com/v1/artists/5hnL5jeXvusnuBDF39czv0",
+            "id": "5hnL5jeXvusnuBDF39czv0",
+            "name": "Denzel",
+            "type": "artist",
+            "uri": "spotify:artist:5hnL5jeXvusnuBDF39czv0"
+          }
+        ],
+        "available_markets": [],
+        "disc_number": 1,
+        "duration_ms": 121329,
+        "explicit": False,
+        "external_ids": { "isrc": "AUUM71900487" },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4tJqhki6ZFQh9Oi3KVfaxG"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4tJqhki6ZFQh9Oi3KVfaxG",
+        "id": "4tJqhki6ZFQh9Oi3KVfaxG",
+        "is_local": False,
+        "name": "Skyfall/Lose Yourself - The Voice Australia 2019 Performance / Live",
+        "popularity": 18,
+        "preview_url": None,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:4tJqhki6ZFQh9Oi3KVfaxG"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=Lose%2520Yourself&type=track&offset=2&limit=1",
+    "offset": 1,
+    "previous": "https://api.spotify.com/v1/search?query=Lose%2520Yourself&type=track&offset=0&limit=1",
+    "total": 198
+  }
+}

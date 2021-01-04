@@ -1,6 +1,7 @@
 import os
 import requests
 import spotipy
+import json
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 
@@ -28,6 +29,9 @@ try:
 except:
     print('Could not authenticate, please check the authentication keys!')
 
+# Get the first track based on the title.
 track_results = sp.search(q=SearchValue, type='track', limit=1,offset=1)
 
-print(track_results)
+# Get the link from the track searched by title from the dictionary.
+link = track_results['tracks']['items'][0]['external_urls']['spotify']
+print(link)
