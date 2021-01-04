@@ -2,7 +2,7 @@
 
 ## ℹ General info
 
-This project is an AI based challenge where we determine an emotion of a picture and give you a song that empowers that emotion.
+This project is an AI-based challenge where we determine the emotion of a picture and give you a song that empowers that emotion.
 
 ### 📈 Flowchart:
 
@@ -22,5 +22,5 @@ Project is created with:
 API's used:
 
 - [AWS rekognition API](https://docs.aws.amazon.com/rekognition/latest/dg/faces-detect-images.html)
-- [Musicovery API](http://musicovery.com/api/V6/doc/documentation.php)
+- [Last.FM API](https://www.last.fm/api)
 - [Spotify API](https://developer.spotify.com)
