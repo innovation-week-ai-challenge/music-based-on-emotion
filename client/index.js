@@ -138,8 +138,19 @@ Fear = [
   "AM7",
 ];
 
-// Api call
-//response = fetch...
+// Get the emotion
+function getEmotion(image) {
+  fetch(`http://localhost:5000/emotion`, {
+    method: "POST",
+    body: image,
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+}
+
+image = "";
+
+response = getEmotion(image);
 
 switch (response) {
   case (respose = "Happy"):
@@ -229,7 +240,7 @@ const startProgram = async () => {
     await improvRNN.initialize();
     let improvisedMelody = await improvRNN.continueSequence(
       quantizedSequence,
-      60,
+      30,
       1.1,
       Melody
     );
