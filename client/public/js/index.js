@@ -25,25 +25,22 @@ const addVideoStream = (video, stream) => {
 
 const disableCamera = () => {
   const stream = myVideo.srcObject;
-  if (stream) {
-    const tracks = stream.getTracks();
-    tracks[0].stop();
-  }
+  const tracks = stream.getTracks();
+  tracks[0].stop();
 };
 
 const fileInput = document.querySelector("#fileInput");
 const webcamBtn = document.querySelector("#webcamBtn");
 const uploadPhotoBtn = document.querySelector("#uploadPhotoBtn");
 
-const uploadIcon = document.querySelector('#uploadIcon');
-const takePictureBtn = document.querySelector('#takePictureBtn');
+const uploadIcon = document.querySelector("#uploadIcon");
 
-const divLabel = document.querySelector('#divLabel');
-const takePictureDiv = document.querySelector('#takePictureDiv');
-const uploadPictureDiv = document.querySelector('#uploadPictureDiv');
+const divLabel = document.querySelector("#divLabel");
+const takePictureDiv = document.querySelector("#takePictureDiv");
+const uploadPictureDiv = document.querySelector("#uploadPictureDiv");
 
-const previewPhotoView = document.querySelector('#previewPhotoView');
-const photoPreview = document.querySelector('#photoPreview');
+const previewPhotoView = document.querySelector("#previewPhotoView");
+const photoPreview = document.querySelector("#photoPreview");
 
 const canvas = document.querySelector('#canvas');
 const videoSnapshotPreview = document.querySelector('#videoSnapshotPreview');
@@ -69,7 +66,6 @@ webcamBtn.addEventListener("click", (e) => {
   });
 });
 
-// Listener for when a user wants to use a photo from his/her computer
 uploadPhotoBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("clicked");
@@ -88,8 +84,7 @@ uploadPhotoBtn.addEventListener("click", (e) => {
   video.classList.add("d-none");
 });
 
-// Listener to open file explorer to pick an image
-uploadIcon.addEventListener('click', (e) => {
+uploadIcon.addEventListener("click", (e) => {
   e.preventDefault();
   fileInput.click();
 });
@@ -112,8 +107,11 @@ fileInput.addEventListener('change', (e) => {
     img.src = URL.createObjectURL(imageFile);
     // This is to show the image on the webpage
     photoPreview.src = URL.createObjectURL(imageFile);
+    reader.onload = () => {
+      photoPreview.src = e.target.files;
+    };
   }
-})
+});
 
 takePictureBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -330,7 +328,7 @@ switch (response) {
     Melody = Fear;
     break;
   default:
-    Melody = Happy;
+    Melody = Unknown;
 }
 
 const sequence = {
@@ -394,16 +392,6 @@ const startProgram = async () => {
       Melody
     );
 
-    const playOriginalMelody = () => {
-      sequence.notes.forEach((note) => {
-        synth.triggerAttackRelease(
-          Note.fromMidi(note.pitch),
-          note.endTime - note.startTime,
-          note.startTime
-        );
-      });
-    };
-
     const playGeneratedMelody = () => {
       improvisedMelody.notes.forEach((note) => {
         synth.triggerAttackRelease(
@@ -414,14 +402,24 @@ const startProgram = async () => {
       });
     };
 
-    const originalMelodyButton = document.getElementById("original");
+    const stopGeneratedMelody = () => {
+      document.getElementById("stop").onclick = location.reload();
+    };
+
     const generatedMelodyButton = document.getElementById("generated");
-    originalMelodyButton.onclick = () => {
-      playOriginalMelody();
-    };
-    generatedMelodyButton.onclick = () => {
+    const nextGeneratedMelodyButton = document.getElementById("nextGenerated");
+    const stopGeneratedMelodyButton = document.getElementById("stop");
+
+    nextGeneratedMelodyButton.addEventListener("click", () => {
       playGeneratedMelody();
-    };
+    });
+
+    generatedMelodyButton.addEventListener("click", () => {
+      playGeneratedMelody();
+    });
+    stopGeneratedMelodyButton.addEventListener("click", () => {
+      stopGeneratedMelody();
+    });
   } catch (error) {
     console.error(error);
   }

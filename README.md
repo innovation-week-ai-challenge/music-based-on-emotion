@@ -1,26 +1,32 @@
 # AI Challenge - play music based on emotions
 
-## ℹ General info
+## ℹ About this project
 
-This project is an AI-based challenge where we determine the emotion of a picture and give you a song that empowers that emotion.
+This project is an AI-based challenge where we determine the emotion of a given picture and play a generated song using AI that empowers the emotion.
 
-### 📈 Flowchart:
+## 📈 Flowchart
 
-![flowchart](flowchart.jpg)
+![flowchart](flowchart.png)
+😀Happy
+😥Sad
+😠Angry
+😵Confused
+🤢Disgusted
+😦Surprised
+😐Calm
+❓Unknown
+😨Fear
 
-### Types of emotions:
+## 💾 Technologies
 
-😀Happy 😥Sad 😠Angry 😵Confused 🤢Disgusted 😦Surprised 😐Calm ❓Unknown 😨Fear
+- Python - version: 3.7
+- Flask - version: 1.1.2
+- Node.js - version: 15.5.1
+- Express - version: 4.17.1
 
-## Technologies
-
-Project is created with:
-
-- Python, version: 3.7
-- Flask, version: 1.1.2
-
-API's used:
+## ⚡ API's Used
 
 - [AWS rekognition API](https://docs.aws.amazon.com/rekognition/latest/dg/faces-detect-images.html)
-- [Last.FM API](https://www.last.fm/api)
-- [Spotify API](https://developer.spotify.com)
+- [Magenta.js](https://github.com/magenta/magenta-js)
+- [Tonal](https://github.com/tonaljs/tonal)
+- [Tone.js](https://tonejs.github.io/)

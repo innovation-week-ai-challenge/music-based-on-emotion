@@ -22,12 +22,12 @@
 }
 
 body {
-  background-color: var(--blue-detail);
+  background-color: var(--blue-detail-hover);
   color: var(--dark);
 }
 
 .container {
-  max-width: 80%;
+  max-width: 85%;
 }
 
 h1,
@@ -39,18 +39,26 @@ h6 {
   font-family: "Title";
 }
 
+h1 {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: solid blue;
+}
+
 .v-flex {
   display: flex;
   align-items: center;
 }
 
 .panel {
+  position: relative;
   width: 100%;
   height: auto;
   background-color: var(--white);
-  border-radius: 30px;
+  border-radius: 15px;
   box-shadow: 0px 0px 10px var(--shadow);
-  padding: 2rem;
+  padding: 5rem 3rem;
+  margin-top: 3rem;
 }
 
 .panel .button-wrapper {
@@ -59,7 +67,7 @@ h6 {
 
 .tab {
   text-align: center;
-  color: var(--blue-detail-hover);
+  color: var(--blue-detail);
   font-weight: 500;
   background-color: var(--white);
   border: 1px solid var(--shadow);
@@ -67,6 +75,7 @@ h6 {
   padding: 0.8rem 0;
   justify-content: center;
   position: relative;
+  margin-top: 0.5rem;
 }
 
 .tab:hover {
@@ -75,7 +84,7 @@ h6 {
 }
 
 .tab.active {
-  border-bottom: 2px solid var(--blue-detail-hover);
+  border-bottom: 2px solid var(--blue-detail);
 }
 
 .tab ion-icon {
@@ -122,11 +131,79 @@ input[type="submit"] {
   height: 50px;
   justify-content: center;
   align-items: center;
-  color: var(--blue-detail-hover);
+  color: var(--blue-detail);
   font-size: 1.2rem;
   margin-right: 0.5rem;
 }
 
 .webcam-control:hover {
   background-color: var(--button-hover);
+}
+
+.spacer {
+  width: 100%;
+  height: 3rem;
+}
+
+.music-player {
+  position: absolute;
+  width: 100%;
+  background-color: var(--dark);
+  bottom: 0;
+  left: 0;
+  padding: 1rem 0;
+  color: var(--light-grey);
+}
+
+.music-player ion-icon {
+  font-size: 1rem;
+  color: var(--light-grey);
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.music-player .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#video {
+  border-radius: 0;
+  background: white;
+  height: 400px;
+  padding-top: 5%;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1050px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  body {
+    background: var(--white);
+  }
+  .container {
+    max-width: 95%;
+  }
+  h1 {
+    text-align: left;
+  }
+  .panel {
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0;
+  }
+  .tab {
+    width: 180px;
+  }
+
+  #video {
+    margin-top: 50px;
+    background: white;
+  }
 }
