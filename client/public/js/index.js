@@ -23,12 +23,54 @@ const addVideoStream = (video, stream) => {
   })
 }
 
+const disableCamera = () => {
+  const stream = myVideo.srcObject;
+  const tracks = stream.getTracks();
+  tracks[0].stop();
+}
+
+
 const fileInput = document.querySelector('#fileInput');
-const uploadBtn = document.querySelector('#uploadBtn');
-uploadBtn.addEventListener('click', (e) => {
+const webcamBtn = document.querySelector('#webcamBtn')
+const uploadPhotoBtn = document.querySelector('#uploadPhotoBtn');
+
+const divLabel = document.querySelector('#divLabel');
+const takePictureDiv = document.querySelector('#takePictureDiv');
+const uploadPictureDiv = document.querySelector('#uploadPictureDiv');
+
+const previewPhotoView = document.querySelector('#previewPhotoView');
+
+webcamBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  // Open file explorer where you can pick a file
-  fileInput.click();
+  divLabel.innerText = 'Take your picture'
+
+  webcamBtn.classList.add('active');
+  uploadPhotoBtn.classList.remove('active');
+
+  takePictureDiv.classList.remove('d-none');
+  uploadPictureDiv.classList.add('d-none');
+
+  previewPhotoView.classList.add('d-none');
+  video.classList.remove('d-none');
+
+})
+
+uploadPhotoBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('clicked');
+  // Disable camera
+  disableCamera();
+
+  divLabel.innerText = 'Upload your picture'
+
+  webcamBtn.classList.remove('active');
+  uploadPhotoBtn.classList.add('active');
+
+  takePictureDiv.classList.add('d-none');
+  uploadPictureDiv.classList.remove('d-none');
+
+  previewPhotoView.classList.remove('d-none');
+  video.classList.add('d-none');
 });
 
 /*

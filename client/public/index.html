@@ -27,18 +27,26 @@
           </h1>
           <h5 class="mt-5">Choose an input</h5>
           <div class="button-wrapper mt-3 mb-5">
-            <a href="#" class="tab v-flex active">
+            <a href="#" class="tab v-flex active" id="webcamBtn">
               <ion-icon name="camera"></ion-icon>Webcam
             </a>
-            <a href="#" class="tab v-flex" id="uploadBtn">
+            <a href="#" class="tab v-flex" id="uploadPhotoBtn">
               <ion-icon name="image"></ion-icon>Upload photo
             </a>
           </div>
           <div id="webcamform">
-            <h5>Take your picture</h5>
-            <div style="display: flex">
+            <h5 id="divLabel">Take your picture</h5>
+            <div style="display: flex" id="takePictureDiv">
               <a class="webcam-control" href="#">
                 <ion-icon name="camera"></ion-icon>
+              </a>
+              <a class="webcam-control" href="#">
+                <ion-icon name="sync"></ion-icon>
+              </a>
+            </div>
+            <div style="display: flex" id="uploadPictureDiv" class="d-none">
+              <a class="webcam-control" href="#">
+                <ion-icon name="cloud-upload"></ion-icon>
               </a>
               <a class="webcam-control" href="#">
                 <ion-icon name="sync"></ion-icon>
@@ -54,6 +62,8 @@
           <video id="video" class="vid">
             Your browser does not support video
           </video>
+          <canvas id="previewPhotoView" class="d-none">
+          </canvas>
         </div>
       </div>
     </div>
