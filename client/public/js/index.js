@@ -53,6 +53,9 @@ webcamBtn.addEventListener('click', (e) => {
   previewPhotoView.classList.add('d-none');
   video.classList.remove('d-none');
 
+  navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+    addVideoStream(myVideo, stream)
+  })
 })
 
 uploadPhotoBtn.addEventListener('click', (e) => {
