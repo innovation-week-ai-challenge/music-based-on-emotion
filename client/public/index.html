@@ -18,15 +18,14 @@
 
 <body>
   <div class="container">
-    <div class="panel mt-5">
+    <div class="panel">
       <div class="row">
         <div class="col-md-12">
           <h1>Get a melody based on your emotion</h1>
         </div>
       </div>
-
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <h5 class="mt-5">Choose an input</h5>
           <div class="row button-wrapper">
             <a href="#" class="tab v-flex active" id="webcamBtn">
@@ -36,7 +35,7 @@
               <ion-icon name="image"></ion-icon>Upload photo
             </a>
           </div>
-          <hr />
+          <div class="spacer"></div>
           <h5 id="divLabel">Take your picture</h5>
           <div id="webcamform">
             <div class="row" id="takePictureDiv">
@@ -56,19 +55,29 @@
               </a>
             </div>
           </div>
-          <hr />
+          <div class="spacer"></div>
           <form enctype="multipart/form-data" action="http://localhost:5000/emotion" method="post">
             <input class="d-none" type="file" name="image" id="fileInput" />
             <input type="submit" value="Send" />
           </form>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <video id="video" class="vid">
             Your browser does not support video
           </video>
           <div id="previewPhotoView" class="d-none">
             <img src="" id="photoPreview" alt="">
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="music-player">
+      <div class="container">
+        <div class="v-flex">No song yet to play, upload image</div>
+        <div class="v-flex">
+          <ion-icon id="stop" name="square"></ion-icon>
+          <ion-icon id="generated" name="play"></ion-icon>
+          <ion-icon id="nextGenerated" name="skip-forward"></ion-icon>
         </div>
       </div>
     </div>
