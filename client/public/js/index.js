@@ -34,11 +34,14 @@ const fileInput = document.querySelector('#fileInput');
 const webcamBtn = document.querySelector('#webcamBtn')
 const uploadPhotoBtn = document.querySelector('#uploadPhotoBtn');
 
+const uploadIcon = document.querySelector('#uploadIcon');
+
 const divLabel = document.querySelector('#divLabel');
 const takePictureDiv = document.querySelector('#takePictureDiv');
 const uploadPictureDiv = document.querySelector('#uploadPictureDiv');
 
 const previewPhotoView = document.querySelector('#previewPhotoView');
+const photoPreview = document.querySelector('#photoPreview');
 
 webcamBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -75,6 +78,25 @@ uploadPhotoBtn.addEventListener('click', (e) => {
   previewPhotoView.classList.remove('d-none');
   video.classList.add('d-none');
 });
+
+uploadIcon.addEventListener('click', (e) => {
+  e.preventDefault();
+  fileInput.click();
+});
+
+fileInput.addEventListener('change', (e) => {
+  console.log('file input changed');
+  // Show image in canvas
+  if (e.target.files) {
+    const imageFile = e.target.files[0];
+    let reader = new FileReader();
+
+    photoPreview.src = URL.createObjectURL(imageFile);
+    reader.onload = () => {
+      photoPreview.src = e.target.files;
+    }
+  }
+})
 
 /*
     Chords. Consulted on 05/01/2021

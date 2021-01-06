@@ -45,7 +45,7 @@
               </a>
             </div>
             <div style="display: flex" id="uploadPictureDiv" class="d-none">
-              <a class="webcam-control" href="#">
+              <a class="webcam-control" href="#" id="uploadIcon">
                 <ion-icon name="cloud-upload"></ion-icon>
               </a>
               <a class="webcam-control" href="#">
@@ -62,8 +62,9 @@
           <video id="video" class="vid">
             Your browser does not support video
           </video>
-          <canvas id="previewPhotoView" class="d-none">
-          </canvas>
+          <div id="previewPhotoView" class="d-none">
+            <img src="" id="photoPreview" alt="">
+          </div>
         </div>
       </div>
     </div>
