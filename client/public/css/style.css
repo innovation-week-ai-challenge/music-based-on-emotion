@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Title';
+  src: url('../font/Poppins-Medium.ttf');
+}
+@font-face {
+  font-family: 'Text';
+  src: url('../font/Poppins-Regular.ttf');
+}
+
+:root {
+  --light-grey: #f6f7f8;
+  --white: #ffffff;
+  --blue-detail: #3498db;
+  --blue-detail-hover: #2980b9;
+  --red-detail: #ff3d3b;
+  --red-detail-hover: #f10e0c;
+  --dark: #3d4053;
+  --shadow: #3d40532d;
+  --button-hover: #fbfbfb;
+
+  font-family: 'Text';
+}
+
+body {
+  background-color: var(--blue-detail);
+  color: var(--dark);
+}
+
+.container {
+  max-width: 80%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Title';
+}
+
+.v-flex {
+  display: flex;
+  align-items: center;
+}
+
+.panel {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px var(--shadow);
+  padding: 2rem;
+}
+
+.panel .button-wrapper {
+  display: flex;
+}
+
+.tab {
+  text-align: center;
+  color: var(--blue-detail-hover);
+  font-weight: 500;
+  background-color: var(--white);
+  border: 1px solid var(--shadow);
+  width: 200px;
+  padding: 0.8rem 0;
+  justify-content: center;
+  position: relative;
+}
+
+.tab:hover {
+  text-decoration: none;
+  background-color: var(--button-hover);
+}
+
+.tab.active {
+  border-bottom: 2px solid var(--blue-detail-hover);
+}
+
+.tab ion-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+.panel .vid {
+  background-color: var(--light-grey);
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: none;
+}
+
+.panel form {
+  position: absolute;
+  bottom: 0;
+}
+
+input[type='submit'] {
+  background: var(--red-detail);
+  border: none;
+  padding: 0.5rem 2rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+#webcamform img {
+  border-radius: 30px;
+  width: 50%;
+}
+
+.webcam-control {
+  display: flex;
+  border: 1px solid var(--shadow);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue-detail-hover);
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.webcam-control:hover {
+  background-color: var(--button-hover);
+}
