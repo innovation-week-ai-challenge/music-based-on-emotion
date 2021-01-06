@@ -34,55 +34,58 @@
       src="js/index.js"
     ></script>
   </head>
+
   <body>
     <div class="container">
       <div class="panel mt-5">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Get a melody based on your emotion</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row h-100">
+          <div class="col-md-5">
+            <h1>
+              Get a melody <br />
+              based on your emotion
+            </h1>
             <h5 class="mt-5">Choose an input</h5>
-            <div class="row button-wrapper">
-              <a href="#" class="tab v-flex active"
-                ><ion-icon name="camera"></ion-icon>Webcam</a
-              >
-              <a href="#" class="tab v-flex"
-                ><ion-icon name="image"></ion-icon>Upload photo</a
-              >
+            <div class="button-wrapper mt-3 mb-5">
+              <a href="#" class="tab v-flex active" id="webcamBtn">
+                <ion-icon name="camera"></ion-icon>Webcam
+              </a>
+              <a href="#" class="tab v-flex" id="uploadPhotoBtn">
+                <ion-icon name="image"></ion-icon>Upload photo
+              </a>
             </div>
-            <hr />
-            <h5>Take your picture</h5>
             <div id="webcamform">
-              <div class="row">
-                <a class="webcam-control" href="#"
-                  ><ion-icon name="camera"></ion-icon
-                ></a>
-                <a class="webcam-control" href="#"
-                  ><ion-icon name="sync"></ion-icon
-                ></a>
+              <h5 id="divLabel">Take your picture</h5>
+              <div style="display: flex" id="takePictureDiv">
+                <a class="webcam-control" href="#">
+                  <ion-icon name="camera"></ion-icon>
+                </a>
+                <a class="webcam-control" href="#">
+                  <ion-icon name="sync"></ion-icon>
+                </a>
+              </div>
+              <div style="display: flex" id="uploadPictureDiv" class="d-none">
+                <a class="webcam-control" href="#">
+                  <ion-icon name="cloud-upload"></ion-icon>
+                </a>
+                <a class="webcam-control" href="#">
+                  <ion-icon name="sync"></ion-icon>
+                </a>
               </div>
             </div>
-            <hr />
             <form
               enctype="multipart/form-data"
               action="http://localhost:5000/emotion"
               method="post"
             >
-              <div class="input-group mb-3">
-                <input type="file" name="profile_image" />
-                <hr />
-                <input type="submit" value="Send" />
-              </div>
+              <input class="d-none" type="file" name="image" id="fileInput" />
+              <input type="submit" value="Send" />
             </form>
-            <hr />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <video id="video" class="vid">
               Your browser does not support video
             </video>
+            <canvas id="previewPhotoView" class="d-none"> </canvas>
           </div>
         </div>
       </div>
