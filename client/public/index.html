@@ -38,14 +38,16 @@
   <body>
     <div class="container">
       <div class="panel mt-5">
-        <div class="row h-100">
-          <div class="col-md-5">
-            <h1>
-              Get a melody <br />
-              based on your emotion
-            </h1>
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Get a melody based on your emotion</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
             <h5 class="mt-5">Choose an input</h5>
-            <div class="button-wrapper mt-3 mb-5">
+            <div class="row button-wrapper">
               <a href="#" class="tab v-flex active" id="webcamBtn">
                 <ion-icon name="camera"></ion-icon>Webcam
               </a>
@@ -53,9 +55,10 @@
                 <ion-icon name="image"></ion-icon>Upload photo
               </a>
             </div>
+            <hr />
+            <h5 id="divLabel">Take your picture</h5>
             <div id="webcamform">
-              <h5 id="divLabel">Take your picture</h5>
-              <div style="display: flex" id="takePictureDiv">
+              <div class="row" id="takePictureDiv">
                 <a class="webcam-control" href="#">
                   <ion-icon name="camera"></ion-icon>
                 </a>
@@ -63,8 +66,8 @@
                   <ion-icon name="sync"></ion-icon>
                 </a>
               </div>
-              <div style="display: flex" id="uploadPictureDiv" class="d-none">
-                <a class="webcam-control" href="#">
+              <div id="uploadPictureDiv" class="row d-none">
+                <a id="uploadIcon" class="webcam-control" href="#">
                   <ion-icon name="cloud-upload"></ion-icon>
                 </a>
                 <a class="webcam-control" href="#">
@@ -72,6 +75,7 @@
                 </a>
               </div>
             </div>
+            <hr />
             <form
               enctype="multipart/form-data"
               action="http://localhost:5000/emotion"
@@ -81,7 +85,7 @@
               <input type="submit" value="Send" />
             </form>
           </div>
-          <div class="col-md-7">
+          <div class="col-md-6">
             <video id="video" class="vid">
               Your browser does not support video
             </video>
