@@ -23,6 +23,14 @@ const addVideoStream = (video, stream) => {
   })
 }
 
+const fileInput = document.querySelector('#fileInput');
+const uploadBtn = document.querySelector('#uploadBtn');
+uploadBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  // Open file explorer where you can pick a file
+  fileInput.click();
+});
+
 /*
     Chords. Consulted on 05/01/2021
     https://www.edmprod.com/different-chord-types/
