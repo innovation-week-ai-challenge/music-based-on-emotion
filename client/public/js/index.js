@@ -25,8 +25,10 @@ const addVideoStream = (video, stream) => {
 
 const disableCamera = () => {
   const stream = myVideo.srcObject;
-  const tracks = stream.getTracks();
-  tracks[0].stop();
+  if (stream) {
+    const tracks = stream.getTracks();
+    tracks[0].stop();
+  }
 };
 
 const fileInput = document.querySelector("#fileInput");
