@@ -136,7 +136,6 @@ sendbtn.addEventListener('click', async (e) => {
   e.preventDefault();
 
   canvas.toBlob(b => {
-    console.log(b);
     canvas.toBlob(async blob => {
       const result = await getEmotion(blob);
       console.log(result);
