@@ -36,6 +36,7 @@ const webcamBtn = document.querySelector("#webcamBtn");
 const uploadPhotoBtn = document.querySelector("#uploadPhotoBtn");
 
 const uploadIcon = document.querySelector('#uploadIcon');
+const takePictureBtn = document.querySelector('#takePictureBtn');
 
 const divLabel = document.querySelector('#divLabel');
 const takePictureDiv = document.querySelector('#takePictureDiv');
@@ -44,6 +45,7 @@ const uploadPictureDiv = document.querySelector('#uploadPictureDiv');
 const previewPhotoView = document.querySelector('#previewPhotoView');
 const photoPreview = document.querySelector('#photoPreview');
 
+// Listener for when a user wants to use his/her camera
 webcamBtn.addEventListener("click", (e) => {
   e.preventDefault();
   divLabel.innerText = "Take your picture";
@@ -62,6 +64,7 @@ webcamBtn.addEventListener("click", (e) => {
   });
 });
 
+// Listener for when a user wants to use a photo from his/her computer
 uploadPhotoBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("clicked");
@@ -80,22 +83,19 @@ uploadPhotoBtn.addEventListener("click", (e) => {
   video.classList.add("d-none");
 });
 
+// Listener to open file explorer to pick an image
 uploadIcon.addEventListener('click', (e) => {
   e.preventDefault();
   fileInput.click();
 });
 
+// Listener for when there is a change in the file input so we can show which image has been uploaded
 fileInput.addEventListener('change', (e) => {
   console.log('file input changed');
   // Show image in canvas
   if (e.target.files) {
     const imageFile = e.target.files[0];
-    let reader = new FileReader();
-
     photoPreview.src = URL.createObjectURL(imageFile);
-    reader.onload = () => {
-      photoPreview.src = e.target.files;
-    }
   }
 })
 
