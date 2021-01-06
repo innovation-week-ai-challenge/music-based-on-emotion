@@ -59,7 +59,7 @@
           <hr />
           <form enctype="multipart/form-data" action="http://localhost:5000/emotion" method="post">
             <input class="d-none" type="file" name="image" id="fileInput" />
-            <input type="submit" value="Send" />
+            <input type="submit" value="Send" id="sendBtn" />
           </form>
         </div>
         <div class="col-md-6">
@@ -67,7 +67,10 @@
             Your browser does not support video
           </video>
           <div id="previewPhotoView" class="d-none">
-            <img src="" id="photoPreview" alt="">
+            <img style="max-width:100%;" class="d-non" src="" id="photoPreview" alt="">
+          </div>
+          <div id="videoSnapshotPreview" class="d-none">
+            <canvas class="d-non" id="canvas"></canvas>
           </div>
         </div>
       </div>
