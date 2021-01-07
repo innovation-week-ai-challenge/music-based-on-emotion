@@ -97,7 +97,7 @@ uploadIcon.addEventListener('click', (e) => {
   fileInput.click()
 })
 
-refreshPictureButton.addEventListener('click', (e) => { })
+refreshPictureButton.addEventListener('click', (e) => {})
 
 refreshUploadIcon.addEventListener('click', (e) => {
   uploadForm.reset()
@@ -148,12 +148,18 @@ takePictureBtn.addEventListener('click', (e) => {
   previewPhotoView.classList.remove('d-none')
 })
 
+let emotionResult = 'UNKNOWN'
+const emotionStatus = document.getElementById('emotionStatus')
+const songInput = document.getElementById('songInput')
+
 sendbtn.addEventListener('click', async (e) => {
   e.preventDefault()
 
   canvas.toBlob(async (blob) => {
-    const result = await getEmotion(blob)
-    console.log(result)
+    emotionResult = await getEmotion(blob)
+    console.log(emotionResult)
+    emotionStatus.innerHTML = `You are a ${emotionResult.emotion} person`
+    songInput.innerHTML = `Here is a ${emotionResult.emotion} song.`
   })
 })
 
@@ -306,34 +312,34 @@ Fear = [
 
 image = ''
 
-response = getEmotion(image)
+response = emotionResult
 
 switch (response) {
-  case (respose = 'Happy'):
+  case (response = 'HAPPY'):
     Melody = Happy
     break
-  case (respose = 'Sad'):
+  case (response = 'SAD'):
     Melody = Sad
     break
-  case (respose = 'Angry'):
+  case (response = 'ANGRY'):
     Melody = Angry
     break
-  case (respose = 'Confused'):
+  case (response = 'CONFUSED'):
     Melody = Confused
     break
-  case (respose = 'Disgusted'):
+  case (response = 'DISGUSTED'):
     Melody = Disgusted
     break
-  case (respose = 'Surprised'):
+  case (response = 'SURPRISED'):
     Melody = Surprised
     break
-  case (respose = 'Calm'):
+  case (response = 'CALM'):
     Melody = Calm
     break
-  case (respose = 'Unknown'):
+  case (response = 'UNKNOWN'):
     Melody = Unknown
     break
-  case (respose = 'Fear'):
+  case (response = 'FEAR'):
     Melody = Fear
     break
   default:
@@ -345,6 +351,8 @@ switch (response) {
   Consulted on 05/01/2021.
   https://medium.com/@oluwafunmi.ojo/getting-started-with-magenta-js-e7ffbcb64c21
 */
+
+console.log(Melody)
 
 const sequence = {
   ticksPerQuarter: 220,

@@ -9,7 +9,7 @@ class RecognizeEmotion:
     access_key = os.getenv("AWS_ACCESS_KEY")
     secret_key = os.getenv("AWS_SECRET_KEY")
 
-    self.client = boto3.client('rekognition', aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+    self.client = boto3.client('rekognition', aws_access_key_id=access_key, aws_secret_access_key=secret_key, region_name='us-west-2')
   
   def get_emotion(self, image_bytes):
     response = self.client.detect_faces(Image={'Bytes': image_bytes}, Attributes=['ALL'])
