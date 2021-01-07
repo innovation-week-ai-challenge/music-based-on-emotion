@@ -152,11 +152,9 @@ takePictureBtn.addEventListener("click", (e) => {
 sendbtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  canvas.toBlob((b) => {
-    canvas.toBlob(async (blob) => {
-      const result = await getEmotion(blob);
-      console.log(result);
-    });
+  canvas.toBlob(async (blob) => {
+    const result = await getEmotion(blob);
+    console.log(result);
   });
 });
 
