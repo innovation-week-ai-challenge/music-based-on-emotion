@@ -42,7 +42,7 @@
               <a id="takePictureBtn" class="webcam-control" href="#">
                 <ion-icon name="camera"></ion-icon>
               </a>
-              <a class="webcam-control" href="#">
+              <a id="refreshPictureBtn" class="webcam-control" href="#">
                 <ion-icon name="sync"></ion-icon>
               </a>
             </div>
@@ -50,13 +50,13 @@
               <a id="uploadIcon" class="webcam-control" href="#">
                 <ion-icon name="cloud-upload"></ion-icon>
               </a>
-              <a class="webcam-control" href="#">
+              <a id="refreshIcon" class="webcam-control" href="#">
                 <ion-icon name="sync"></ion-icon>
               </a>
             </div>
           </div>
           <div class="spacer"></div>
-          <form enctype="multipart/form-data" action="http://localhost:5000/emotion" method="post">
+          <form id="imageUpload" enctype="multipart/form-data" action="http://localhost:5000/emotion" method="post">
             <input class="d-none" type="file" name="image" id="fileInput" />
             <input type="submit" value="Send" id="sendBtn" />
           </form>
