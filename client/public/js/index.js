@@ -159,6 +159,22 @@ const songInput = document.getElementById('songInput')
 
 sendbtn.addEventListener('click', async (e) => {
   e.preventDefault()
+  myVideo.classList.add('d-none');
+  previewPhotoView.classList.remove('d-none');
+
+  photoPreview.classList.remove('d-none');
+});
+
+refreshPictureButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  myVideo.classList.remove('d-none');
+
+  photoPreview.src = '';
+});
+
+sendbtn.addEventListener('click', async (e) => {
+  e.preventDefault();
 
   canvas.toBlob(async (blob) => {
     emotionResult = await getEmotion(blob)
