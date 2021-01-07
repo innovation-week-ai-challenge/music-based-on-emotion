@@ -25,8 +25,11 @@ const addVideoStream = (video, stream) => {
 
 const disableCamera = () => {
   const stream = myVideo.srcObject;
-  const tracks = stream.getTracks();
-  tracks[0].stop();
+
+  if (stream) {
+    const tracks = stream.getTracks();
+    tracks[0].stop();
+  }
 };
 
 const fileInput = document.querySelector("#fileInput");
@@ -34,6 +37,7 @@ const webcamBtn = document.querySelector("#webcamBtn");
 const uploadPhotoBtn = document.querySelector("#uploadPhotoBtn");
 
 const uploadIcon = document.querySelector("#uploadIcon");
+const takePictureBtn = document.querySelector('#takePictureBtn');
 
 const divLabel = document.querySelector("#divLabel");
 const takePictureDiv = document.querySelector("#takePictureDiv");
