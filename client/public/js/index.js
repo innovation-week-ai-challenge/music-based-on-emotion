@@ -37,13 +37,11 @@ const webcamBtn = document.querySelector('#webcamBtn')
 const uploadPhotoBtn = document.querySelector('#uploadPhotoBtn')
 
 const uploadIcon = document.querySelector("#uploadIcon");
-<<<<<<< Updated upstream
 const takePictureBtn = document.querySelector('#takePictureBtn');
 
 const divLabel = document.querySelector('#divLabel')
 const takePictureDiv = document.querySelector('#takePictureDiv')
 const uploadPictureDiv = document.querySelector('#uploadPictureDiv')
-=======
 const refreshUploadIcon = document.querySelector("#refreshIcon");
 const uploadForm = document.querySelector("#imageUpload");
 const showImage = document.querySelector(".spacer");
@@ -52,7 +50,6 @@ const divLabel = document.querySelector("#divLabel");
 const takePictureDiv = document.querySelector("#takePictureDiv");
 const uploadPictureDiv = document.querySelector("#uploadPictureDiv");
 const refreshPictureButton = document.querySelector("#refreshPictureBtn");
->>>>>>> Stashed changes
 
 const previewPhotoView = document.querySelector('#previewPhotoView')
 const photoPreview = document.querySelector('#photoPreview')
