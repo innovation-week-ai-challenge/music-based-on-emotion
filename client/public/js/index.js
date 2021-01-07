@@ -24,45 +24,41 @@ const addVideoStream = (video, stream) => {
 }
 
 const disableCamera = () => {
-  const stream = myVideo.srcObject;
+  const stream = myVideo.srcObject
 
   if (stream) {
-    const tracks = stream.getTracks();
-    tracks[0].stop();
+    const tracks = stream.getTracks()
+    tracks[0].stop()
   }
-};
+}
 
 const fileInput = document.querySelector('#fileInput')
 const webcamBtn = document.querySelector('#webcamBtn')
 const uploadPhotoBtn = document.querySelector('#uploadPhotoBtn')
 
-const uploadIcon = document.querySelector("#uploadIcon");
-const takePictureBtn = document.querySelector('#takePictureBtn');
+const uploadIcon = document.querySelector('#uploadIcon')
+const takePictureBtn = document.querySelector('#takePictureBtn')
 
 const divLabel = document.querySelector('#divLabel')
 const takePictureDiv = document.querySelector('#takePictureDiv')
 const uploadPictureDiv = document.querySelector('#uploadPictureDiv')
-const refreshUploadIcon = document.querySelector("#refreshIcon");
-const uploadForm = document.querySelector("#imageUpload");
-const showImage = document.querySelector(".spacer");
-
-const divLabel = document.querySelector("#divLabel");
-const takePictureDiv = document.querySelector("#takePictureDiv");
-const uploadPictureDiv = document.querySelector("#uploadPictureDiv");
-const refreshPictureButton = document.querySelector("#refreshPictureBtn");
+const refreshUploadIcon = document.querySelector('#refreshIcon')
+const uploadForm = document.querySelector('#imageUpload')
+const showImage = document.querySelector('.spacer')
 
 const previewPhotoView = document.querySelector('#previewPhotoView')
 const photoPreview = document.querySelector('#photoPreview')
 
-const canvas = document.querySelector("#canvas");
-const videoSnapshotPreview = document.querySelector("#videoSnapshotPreview");
+const refreshPictureButton = document.querySelector('#refreshPictureBtn')
+const canvas = document.querySelector('#canvas')
+const videoSnapshotPreview = document.querySelector('#videoSnapshotPreview')
 
-const sendbtn = document.querySelector("#sendBtn");
+const sendbtn = document.querySelector('#sendBtn')
 
 // Listener for when a user wants to use his/her camera
-webcamBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  divLabel.innerText = "Take your picture";
+webcamBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  divLabel.innerText = 'Take your picture'
 
   webcamBtn.classList.add('active')
   uploadPhotoBtn.classList.remove('active')
@@ -101,80 +97,80 @@ uploadIcon.addEventListener('click', (e) => {
   fileInput.click()
 })
 
-refreshPictureButton.addEventListener("click", (e) => {});
+refreshPictureButton.addEventListener('click', (e) => {})
 
-refreshUploadIcon.addEventListener("click", (e) => {
-  uploadForm.reset();
+refreshUploadIcon.addEventListener('click', (e) => {
+  uploadForm.reset()
 
-  fileInput.classList.add("d-none");
+  fileInput.classList.add('d-none')
 
-  previewPhotoView.classList.add("d-none");
+  previewPhotoView.classList.add('d-none')
 
-  console.log("refreshed picture!");
-});
+  console.log('refreshed picture!')
+})
 
 // Listener for when there is a change in the file input so we can show which image has been uploaded
-fileInput.addEventListener("change", (e) => {
-  console.log("file input changed");
+fileInput.addEventListener('change', (e) => {
+  console.log('file input changed')
   // Show image
   if (e.target.files) {
-    const imageFile = e.target.files[0];
-    const context = canvas.getContext("2d");
+    const imageFile = e.target.files[0]
+    const context = canvas.getContext('2d')
 
-    let img = new Image();
+    let img = new Image()
     img.onload = function () {
-      canvas.width = img.width;
-      canvas.height = img.height;
-      context.drawImage(img, 0, 0);
-    };
+      canvas.width = img.width
+      canvas.height = img.height
+      context.drawImage(img, 0, 0)
+    }
     // This is to trigger the onload written above
-    img.src = URL.createObjectURL(imageFile);
+    img.src = URL.createObjectURL(imageFile)
     // This is to show the image on the webpage
-    photoPreview.src = URL.createObjectURL(imageFile);
+    photoPreview.src = URL.createObjectURL(imageFile)
   }
 })
 
-takePictureBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+takePictureBtn.addEventListener('click', (e) => {
+  e.preventDefault()
 
-  height = myVideo.videoHeight;
-  width = myVideo.videoWidth;
+  height = myVideo.videoHeight
+  width = myVideo.videoWidth
 
-  canvas.width = width;
-  canvas.height = height;
+  canvas.width = width
+  canvas.height = height
 
-  canvas.getContext("2d").drawImage(video, 0, 0, width, height);
+  canvas.getContext('2d').drawImage(video, 0, 0, width, height)
   canvas.toBlob((blob) => {
-    photoPreview.src = URL.createObjectURL(blob);
-  });
+    photoPreview.src = URL.createObjectURL(blob)
+  })
 
-  myVideo.classList.add("d-none");
-  previewPhotoView.classList.remove("d-none");
-});
+  myVideo.classList.add('d-none')
+  previewPhotoView.classList.remove('d-none')
+})
 
-sendbtn.addEventListener("click", async (e) => {
-  e.preventDefault();
+sendbtn.addEventListener('click', async (e) => {
+  e.preventDefault()
 
   canvas.toBlob((b) => {
     canvas.toBlob(async (blob) => {
-      const result = await getEmotion(blob);
-      console.log(result);
-    });
-  });
-});
+      const result = await getEmotion(blob)
+      console.log(result)
+    })
+  })
+})
 
 // Get the emotion
 async function getEmotion(image) {
-  const formData = new FormData();
-  formData.set("image0", image, "image0.jpg");
+  const formData = new FormData()
+  formData.set('image0', image, 'image0.jpg')
 
-  const response = await fetch("http://localhost:5000/emotion", {
-    method: "POST",
-    body: formData,
-  });
+  const response = await fetch('http://localhost:5000/emotion', {
+    method: 'POST',
+    body: formData
+  })
 
-  const json = await response.json();
-  return json;
+  const json = await response.json()
+  return json
 }
 
 /*
@@ -310,13 +306,7 @@ Fear = [
   'AM7'
 ]
 
-<<<<<<< Updated upstream
-
-
 image = ''
-=======
-image = "";
->>>>>>> Stashed changes
 
 response = getEmotion(image)
 
