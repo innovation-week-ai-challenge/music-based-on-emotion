@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Title";
-  src: url("../font/Poppins-Medium.ttf");
+  font-family: 'Title';
+  src: url('../font/Poppins-Medium.ttf');
 }
 @font-face {
-  font-family: "Text";
-  src: url("../font/Poppins-Regular.ttf");
+  font-family: 'Text';
+  src: url('../font/Poppins-Regular.ttf');
 }
 
 :root {
@@ -18,7 +18,7 @@
   --shadow: #3d40532d;
   --button-hover: #fbfbfb;
 
-  font-family: "Text";
+  font-family: 'Text';
 }
 
 body {
@@ -36,13 +36,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Title";
+  font-family: 'Title';
 }
 
 h1 {
   text-align: center;
   padding: 2rem 0;
-  border-bottom: solid blue;
 }
 
 .v-flex {
@@ -106,7 +105,7 @@ h1 {
   bottom: 0;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background: var(--red-detail);
   border: none;
   padding: 0.5rem 2rem;
@@ -146,7 +145,7 @@ input[type="submit"] {
 }
 
 .music-player {
-  position: absolute;
+  position: fixed;
   width: 100%;
   background-color: var(--dark);
   bottom: 0;
@@ -171,7 +170,18 @@ input[type="submit"] {
   border-radius: 0;
   background: white;
   height: 400px;
-  padding-top: 5%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#photoPreview {
+  max-height: 50vh;
+  max-width: 100%;
+}
+
+.col-md-7 {
+  border: 1px solid var(--shadow);
 }
 
 /* Media Queries */
@@ -205,5 +215,14 @@ input[type="submit"] {
   #video {
     margin-top: 50px;
     background: white;
+  }
+  .col-md-7 {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  #video {
+    margin-top: 0;
   }
 }
