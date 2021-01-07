@@ -107,9 +107,6 @@ fileInput.addEventListener('change', (e) => {
     img.src = URL.createObjectURL(imageFile);
     // This is to show the image on the webpage
     photoPreview.src = URL.createObjectURL(imageFile);
-    reader.onload = () => {
-      photoPreview.src = e.target.files;
-    };
   }
 });
 
