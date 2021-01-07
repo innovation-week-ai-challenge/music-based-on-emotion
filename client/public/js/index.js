@@ -194,7 +194,7 @@ async function getEmotion(image) {
 
   const response = await fetch('http://localhost:5000/emotion', {
     method: 'POST',
-    body: formData
+    body: formData,
   })
 
   const json = await response.json()
@@ -219,7 +219,7 @@ Happy = [
   'F8',
   'G4',
   'Db5',
-  'F8'
+  'F8',
 ]
 Sad = [
   'Gb1',
@@ -233,7 +233,7 @@ Sad = [
   'Ab3',
   'G4',
   'Ab4',
-  'F3'
+  'F3',
 ]
 Angry = [
   'Ab2',
@@ -247,7 +247,7 @@ Angry = [
   'Ab9',
   'G6',
   'Ab2',
-  'F3'
+  'F3',
 ]
 Confused = [
   'Ab2',
@@ -261,7 +261,7 @@ Confused = [
   'G4',
   'Ab2',
   'F4',
-  'Eb2'
+  'Eb2',
 ]
 Disgusted = [
   'F9',
@@ -275,7 +275,7 @@ Disgusted = [
   'G4',
   'Ab2',
   'F4',
-  'Eb2'
+  'Eb2',
 ]
 Surprised = [
   'Ab4',
@@ -289,7 +289,7 @@ Surprised = [
   'Ab4',
   'Ab5',
   'Ab4',
-  'Ab5'
+  'Ab5',
 ]
 Calm = [
   'Ab4',
@@ -303,7 +303,7 @@ Calm = [
   'Ab4',
   'Ab4',
   'F3',
-  'Ab4'
+  'Ab4',
 ]
 Unknown = [
   'F3',
@@ -317,7 +317,7 @@ Unknown = [
   'F3',
   'C5',
   'F3',
-  'F3'
+  'F3',
 ]
 Fear = [
   'Bm',
@@ -331,43 +331,55 @@ Fear = [
   'C5',
   'Bb7',
   'Eb7',
-  'AM7'
+  'AM7',
 ]
 
 image = ''
 
 response = emotionResult
 
+speed = 0
+
 switch (response) {
   case (response = 'HAPPY'):
     Melody = Happy
+    speed = 500
     break
   case (response = 'SAD'):
     Melody = Sad
+    speed = 300
     break
   case (response = 'ANGRY'):
     Melody = Angry
+    speed = 800
     break
   case (response = 'CONFUSED'):
     Melody = Confused
+    speed = 300
     break
   case (response = 'DISGUSTED'):
     Melody = Disgusted
+    speed = 330
     break
   case (response = 'SURPRISED'):
     Melody = Surprised
+    speed = 600
     break
   case (response = 'CALM'):
     Melody = Calm
+    speed = 120
     break
   case (response = 'UNKNOWN'):
     Melody = Unknown
+    speed = 550
     break
   case (response = 'FEAR'):
     Melody = Fear
+    speed = 800
     break
   default:
     Melody = Unknown
+    speed = 550
 }
 
 /* 
@@ -385,14 +397,14 @@ const sequence = {
     {
       time: 0,
       numerator: 4,
-      denominator: 4
-    }
+      denominator: 4,
+    },
   ],
   tempos: [
     {
       time: 0,
-      qpm: 120
-    }
+      qpm: speed,
+    },
   ],
   notes: [
     { pitch: midi('Gb4'), startTime: 0, endTime: 1 },
@@ -423,8 +435,8 @@ const sequence = {
     { pitch: midi('Eb5'), startTime: 22, endTime: 22.5 },
     { pitch: midi('C5'), startTime: 22.5, endTime: 24.5 },
     { pitch: midi('Eb5'), startTime: 24.5, endTime: 25.5 },
-    { pitch: midi('G4'), startTime: 25.5, endTime: 28.5 }
-  ]
+    { pitch: midi('G4'), startTime: 25.5, endTime: 28.5 },
+  ],
 }
 
 const quantizedSequence = mm.sequences.quantizeNoteSequence(sequence, 1)
