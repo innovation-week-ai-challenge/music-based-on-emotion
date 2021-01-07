@@ -102,13 +102,16 @@ refreshPictureButton.addEventListener('click', (e) => {
   e.preventDefault()
   myVideo.classList.remove('d-none')
   photoPreview.src = ''
+  emotionStatus.innerHTML = ''
+  songInput.innerHTML = 'No song yet to play, take a picture or upload one'
 })
 
 refreshUploadIcon.addEventListener('click', (e) => {
   uploadForm.reset()
 
   photoPreview.src = ''
-
+  emotionStatus.innerHTML = ''
+  songInput.innerHTML = 'No song yet to play, take a picture or upload one'
   //previewPhotoView.classList.add("d-none");
 
   console.log('refreshed picture!')
@@ -159,22 +162,22 @@ const songInput = document.getElementById('songInput')
 
 sendbtn.addEventListener('click', async (e) => {
   e.preventDefault()
-  myVideo.classList.add('d-none');
-  previewPhotoView.classList.remove('d-none');
+  myVideo.classList.add('d-none')
+  previewPhotoView.classList.remove('d-none')
 
-  photoPreview.classList.remove('d-none');
-});
+  photoPreview.classList.remove('d-none')
+})
 
 refreshPictureButton.addEventListener('click', (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
-  myVideo.classList.remove('d-none');
+  myVideo.classList.remove('d-none')
 
-  photoPreview.src = '';
-});
+  photoPreview.src = ''
+})
 
 sendbtn.addEventListener('click', async (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
   canvas.toBlob(async (blob) => {
     emotionResult = await getEmotion(blob)
